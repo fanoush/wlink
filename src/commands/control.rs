@@ -28,7 +28,7 @@ impl ProbeInfo {
 }
 impl Response for ProbeInfo {
     fn from_payload(bytes: &[u8]) -> Result<Self> {
-        if bytes.len() < 3 {
+        if bytes.len() < 2 {
             return Err(crate::error::Error::InvalidPayloadLength);
         }
         Ok(Self {
